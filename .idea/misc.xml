@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/register.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/success.xml" value="0.18541666666666667" />
         <entry key="app/src/main/res/drawable/botao_back.xml" value="0.1945" />
         <entry key="app/src/main/res/drawable/botao_gestaoconta.xml" value="0.1945" />
         <entry key="app/src/main/res/drawable/botao_home.xml" value="0.1945" />
