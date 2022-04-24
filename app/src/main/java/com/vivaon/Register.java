@@ -55,7 +55,7 @@ public class Register extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     if (response.equals("success")) {
-                        tvStatus.setText("Olá.");
+                        tvStatus.setText("Utilizador Registado.");
                         btnRegister.setClickable(false);
                     } else if (response.equals("failure")) {
                         tvStatus.setText("Something went wrong!");                    }

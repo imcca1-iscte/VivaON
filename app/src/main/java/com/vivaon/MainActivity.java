@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(String response) {
                     Log.d("res", response);
                     if (response.equals("success")) {
-                        Intent intent = new Intent(MainActivity.this, Success.class);
+                        Intent intent = new Intent(MainActivity.this, PaginaGestaoConta.class);
                         startActivity(intent);
                         finish();
                     } else if (response.equals("failure")) {
