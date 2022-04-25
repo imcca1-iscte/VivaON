@@ -1,32 +1,24 @@
 package com.vivaon;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.graphics.Bitmap;
-import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.zxing.BarcodeFormat;
+import androidx.appcompat.app.AppCompatActivity;
+
+/*import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
-
-import java.io.UnsupportedEncodingException;
-import java.sql.SQLException;
+import com.journeyapps.barcodescanner.BarcodeEncoder;*/
 
 public class Home extends AppCompatActivity {
 
@@ -40,12 +32,41 @@ public class Home extends AppCompatActivity {
     TextView nfc_content;
     Button utilizar;
     ImageView code;
+    ImageButton buttonSearch;
+    ImageButton buttonGConta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        nfc_content = (TextView) findViewById(R.id.textView);
+        buttonSearch=(ImageButton) findViewById(R.id.buttonSearch);
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMaps();
+            }
+        });
+        buttonGConta=(ImageButton) findViewById(R.id.buttonGestaoConta);
+        buttonGConta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGConta();
+            }
+        });
+
+
+    }
+
+    private void openGConta() {
+        Intent intent = new Intent(this,PaginaGestaoConta.class);
+        startActivity(intent);
+    }
+
+    private void openMaps() {
+        Intent intent = new Intent(this,Maps.class);
+        startActivity(intent);
+    }
+        /*nfc_content = (TextView) findViewById(R.id.textView);
         utilizar = findViewById(R.id.button3);
         context = this;
         Toast.makeText(this, "Encoste o Passe à traseira do telemóvel", Toast.LENGTH_SHORT).show();
@@ -125,12 +146,12 @@ public class Home extends AppCompatActivity {
                 }
             }
 
-        });
+        });*/
     }
 
 
-    @Override
-    protected void onNewIntent(Intent intent) {
+    /*@Override*/
+    /*protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
         try {
@@ -147,6 +168,5 @@ public class Home extends AppCompatActivity {
     }
     private void readMode(){
         nfcAdapter.disableForegroundDispatch(this);
-    }
+    }*/
 
-}

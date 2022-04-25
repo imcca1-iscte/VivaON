@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private String email, password;
     private String URL = "http://10.0.2.2/login/login.php";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(String response) {
                     Log.d("res", response);
                     if (response.equals("success")) {
-                        Intent intent = new Intent(MainActivity.this, Home.class);
+                        Intent intent = new Intent(MainActivity.this, PaginaGestaoConta.class);
+                        intent.putExtra("Value",email);
                         startActivity(intent);
                         finish();
                     } else if (response.equals("failure")) {

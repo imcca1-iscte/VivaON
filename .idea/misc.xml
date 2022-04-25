@@ -7,15 +7,19 @@
         <entry key="..\:/Users/guira/OneDrive/Documentos/ISCTE/VivaON/app/src/main/res/layout/activity_mainpesquisarviagem.xml" value="0.1" />
         <entry key="..\:/Users/guira/OneDrive/Documentos/ISCTE/VivaON/app/src/main/res/layout/activity_user.xml" value="0.2" />
         <entry key="..\:/Users/guira/OneDrive/Documentos/ISCTE/VivaON/app/src/main/res/layout/list_item.xml" value="0.2" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/viva/app/src/main/res/layout/activity_assinatura.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/viva/app/src/main/res/layout/activity_gestaoconta.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/viva/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/viva/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/viva/app/src/main/res/layout/register.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/viva/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1685" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/drawable/botao_gestaoconta.xml" value="0.1465" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/drawable/botao_home.xml" value="0.197" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_assinatura.xml" value="0.26358695652173914" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_gestaoconta.xml" value="0.26358695652173914" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_home.xml" value="0.1890625" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_list_maps.xml" value="0.18034447821681865" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_listdata.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_main.xml" value="0.2817028985507246" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_mainmapas.xml" value="0.2817028985507246" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_maps.xml" value="0.2817028985507246" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_user.xml" value="0.2817028985507246" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/register.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/row_data.xml" value="0.18034447821681865" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/success.xml" value="0.18541666666666667" />
         <entry key="app/src/main/res/drawable/botao_back.xml" value="0.1945" />
         <entry key="app/src/main/res/drawable/botao_gestaoconta.xml" value="0.1945" />
@@ -29,7 +33,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

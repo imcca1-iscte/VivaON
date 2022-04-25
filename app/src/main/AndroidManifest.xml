@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.NFC" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,20 +15,24 @@
         android:theme="@style/Theme.VivaON"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Listdata"
+            android:exported="false" />
+        <activity
+            android:name=".ListMaps"
+            android:exported="false" />
+        <activity
+            android:name=".Maps"
+            android:exported="false" />
+        <activity
             android:name=".Home"
-            android:exported="true" >
-
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-               <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
 
-               <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT" />
 
                 <data android:mimeType="text/plain" />
-
-
             </intent-filter>
-
         </activity>
         <activity
             android:name=".PaginaAssinatura"
@@ -47,9 +51,6 @@
         </activity>
         <activity
             android:name=".Register"
-            android:exported="false" />
-        <activity
-            android:name=".Success"
             android:exported="false" />
     </application>
 

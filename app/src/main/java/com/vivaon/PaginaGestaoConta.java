@@ -1,16 +1,22 @@
 package com.vivaon;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PaginaGestaoConta extends AppCompatActivity {
 
     private Button buttonAssinatura;
     private ImageButton buttonHome;
+    private TextView textview3;
+    private EditText editText;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +24,12 @@ public class PaginaGestaoConta extends AppCompatActivity {
         setContentView(R.layout.activity_gestaoconta);
         buttonAssinatura=(Button)findViewById(R.id.buttonAssin);
         buttonHome= (ImageButton) findViewById(R.id.buttonHome);
+        /*editText =(EditText) findViewById(R.id.etEmail);*/
+        textview3=(TextView) findViewById(R.id.textView3);
+        email=getIntent().getExtras().getString("Value");
+        textview3.setText(email);
+
+
 
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override

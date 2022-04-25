@@ -8,30 +8,34 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center_horizontal"
+    tools:context=".Maps">
 
-
-    tools:context=".MainActivityPesquisarViagem">
     <EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/et_source"
-    android:hint="A sua origem"
-    android:padding="12dp"
-    android:background="@android:drawable/editbox_background"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_source"
+        android:hint="Enter Source Location"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_destination"
-        android:hint="O seu destino"
+        android:hint="Enter Destination Location"
         android:padding="12dp"
         android:layout_marginTop="8dp"
         android:background="@android:drawable/editbox_background"/>
-      <Button
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/bt_track"
-          android:text="Mostrar opções disponíveis"
-          android:layout_marginTop="16dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id= "@+id/bt_track"
+        android:text="display track"
+        android:layout_marginTop="16dp"/>
+
+
+
+
 
 </LinearLayout>
