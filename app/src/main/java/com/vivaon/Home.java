@@ -14,6 +14,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
+
 /*import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -34,6 +37,7 @@ public class Home extends AppCompatActivity {
     ImageView code;
     ImageButton buttonSearch;
     ImageButton buttonGConta;
+    ImageButton buttonMaps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +58,16 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        }
 
-    }
+
+
+
+
+    /*private void openlist() {
+        Intent intent = new Intent(this,ListMaps.class);
+        startActivity(intent);
+    }*/
 
     private void openGConta() {
         Intent intent = new Intent(this,PaginaGestaoConta.class);
@@ -63,7 +75,7 @@ public class Home extends AppCompatActivity {
     }
 
     private void openMaps() {
-        Intent intent = new Intent(this,Maps.class);
+        Intent intent = new Intent(this,MapsActivity.class);
         startActivity(intent);
     }
         /*nfc_content = (TextView) findViewById(R.id.textView);

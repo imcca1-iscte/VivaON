@@ -5,6 +5,14 @@ plugins {
 android {
     compileSdk 31
 
+    buildFeatures {
+        viewBinding = true
+    }
+
+    dataBinding{
+        enabled=true
+    }
+
     defaultConfig {
         applicationId "com.vivaon"
         minSdk 21

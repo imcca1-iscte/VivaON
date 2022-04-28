@@ -14,14 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VivaON"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".Listdata"
-            android:exported="false" />
-        <activity
-            android:name=".ListMaps"
-            android:exported="false" />
-        <activity
-            android:name=".Maps"
+        <activity android:name=".MapsActivity"
             android:exported="false" />
         <activity
             android:name=".Home"
