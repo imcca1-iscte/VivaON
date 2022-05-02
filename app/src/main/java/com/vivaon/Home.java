@@ -1,27 +1,44 @@
 package com.vivaon;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
-
-
-/*import com.google.zxing.BarcodeFormat;
+import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
-import com.journeyapps.barcodescanner.BarcodeEncoder;*/
+import com.journeyapps.barcodescanner.BarcodeEncoder;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.sql.SQLException;
+
+
+
+
+
 
 public class Home extends AppCompatActivity {
 
@@ -34,6 +51,8 @@ public class Home extends AppCompatActivity {
     Context context;
     TextView nfc_content;
     Button utilizar;
+    Button carregar;
+    Button remover;
     ImageView code;
     ImageButton buttonSearch;
     ImageButton buttonGConta;
@@ -43,43 +62,10 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        buttonSearch=(ImageButton) findViewById(R.id.buttonSearch);
-        buttonSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMaps();
-            }
-        });
-        buttonGConta=(ImageButton) findViewById(R.id.buttonGestaoConta);
-        buttonGConta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGConta();
-            }
-        });
-
-        }
-
-
-
-
-
-    /*private void openlist() {
-        Intent intent = new Intent(this,ListMaps.class);
-        startActivity(intent);
-    }*/
-
-    private void openGConta() {
-        Intent intent = new Intent(this,PaginaGestaoConta.class);
-        startActivity(intent);
-    }
-
-    private void openMaps() {
-        Intent intent = new Intent(this,MapsActivity.class);
-        startActivity(intent);
-    }
-        /*nfc_content = (TextView) findViewById(R.id.textView);
+        nfc_content = (TextView) findViewById(R.id.textView);
         utilizar = findViewById(R.id.button3);
+        carregar= findViewById(R.id.button6);
+        remover= findViewById(R.id.button5);
         context = this;
         Toast.makeText(this, "Encoste o Passe à traseira do telemóvel", Toast.LENGTH_SHORT).show();
 
@@ -99,6 +85,26 @@ public class Home extends AppCompatActivity {
         IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
         tagDetected.addCategory(Intent.CATEGORY_DEFAULT);
 
+
+        carregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String link = "http://192.168.1.72/passes/carregar.php";
+                new updateData().execute(link);
+            }
+        });
+
+        remover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String link = "http://192.168.1.72/passes/remover.php";
+                new updateData().execute(link);
+                Toast.makeText(getApplicationContext(), "Passe removido com sucesso",
+                        Toast.LENGTH_LONG).show();
+
+            }
+        });
+
     }
 
     private void readfromIntent(Intent intent) throws SQLException, ClassNotFoundException {
@@ -116,6 +122,18 @@ public class Home extends AppCompatActivity {
             buildTagViews(msgs);
         }
     }
+
+
+    private void openGConta() {
+        Intent intent = new Intent(this, PaginaGestaoConta.class);
+        startActivity(intent);
+    }
+
+    private void openMaps() {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
 
     private void buildTagViews(NdefMessage[] msgs) throws ClassNotFoundException, SQLException {
         if (msgs == null || msgs.length == 0) return;
@@ -138,7 +156,6 @@ public class Home extends AppCompatActivity {
         String finalText = text;
 
 
-
         utilizar.setOnClickListener(new View.OnClickListener() {
             private Object BitMatrix;
 
@@ -147,9 +164,9 @@ public class Home extends AppCompatActivity {
 
                 MultiFormatWriter writer = new MultiFormatWriter();
                 try {
-                    com.google.zxing.common.BitMatrix matrix = writer.encode(finalText, BarcodeFormat.QR_CODE,500,500);
+                    com.google.zxing.common.BitMatrix matrix = writer.encode(finalText, BarcodeFormat.QR_CODE, 500, 500);
                     BarcodeEncoder encoder = new BarcodeEncoder();
-                    Bitmap bitmap= encoder.createBitmap(matrix);
+                    Bitmap bitmap = encoder.createBitmap(matrix);
                     code.setImageBitmap(bitmap);
 
 
@@ -158,12 +175,42 @@ public class Home extends AppCompatActivity {
                 }
             }
 
-        });*/
+        });
+
     }
 
 
-    /*@Override*/
-    /*protected void onNewIntent(Intent intent) {
+
+public class updateData extends AsyncTask<String, String, String> {
+
+    @Override
+    protected String doInBackground(String... params) {
+        HttpURLConnection conn = null;
+
+        try {
+            URL url;
+            url = new URL(params[0]);
+            conn = (HttpURLConnection) url.openConnection();
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                InputStream is = conn.getInputStream();
+            } else {
+                InputStream err = conn.getErrorStream();
+            }
+            return "Done";
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return null;
+    }
+}
+    @Override
+    protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
         try {
@@ -178,7 +225,9 @@ public class Home extends AppCompatActivity {
         }
 
     }
-    private void readMode(){
+
+    private void readMode() {
         nfcAdapter.disableForegroundDispatch(this);
-    }*/
+    }
+}
 
