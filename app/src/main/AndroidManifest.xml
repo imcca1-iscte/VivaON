@@ -14,7 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VivaON"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MapsActivity"
+        <activity
+            android:name=".MetodosPagamento"
+            android:exported="false" />
+        <activity
+            android:name=".MapsActivity"
             android:exported="false" />
         <activity
             android:name=".Home"
