@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.vivaon">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,19 +15,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VivaON"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MapsActivity"
+        <activity
+            android:name=".Horario"
+            android:exported="false" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".Read"
+            android:exported="true" />
+        <activity
+            android:name=".InfoFertagus"
+            android:exported="false" />
+        <activity
+            android:name=".CartaoCredito"
+            android:exported="false" />
+        <activity
+            android:name=".Pagamento"
+            android:exported="false" />
+        <activity
+            android:name=".Info"
+            android:exported="false" />
+        <activity
+            android:name=".MapsActivity"
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".PaginaAssinatura"
             android:exported="false" />

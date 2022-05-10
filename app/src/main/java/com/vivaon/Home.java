@@ -1,11 +1,13 @@
 package com.vivaon;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
@@ -21,20 +23,40 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import com.android.volley.toolbox.Volley;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.sql.SQLException;
-
+import java.util.HashMap;
+import java.util.Map;
 
 
 
@@ -49,7 +71,9 @@ public class Home extends AppCompatActivity {
     PendingIntent pendingIntent;
     Tag myTag;
     Context context;
-    TextView nfc_content;
+    TextView nfc_content1;
+    TextView nfc_content2;
+    TextView nfc_content3;
     Button utilizar;
     Button carregar;
     Button remover;
@@ -57,15 +81,20 @@ public class Home extends AppCompatActivity {
     ImageButton buttonSearch;
     ImageButton buttonGConta;
     ImageButton buttonMaps;
+    String text;
+    String finalText;
+    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        nfc_content = (TextView) findViewById(R.id.textView);
+        nfc_content1 = (TextView) findViewById(R.id.textView1);
+        nfc_content2 = (TextView) findViewById(R.id.textView4);
+        nfc_content3 = (TextView) findViewById(R.id.textView5);
         utilizar = findViewById(R.id.button3);
-        carregar= findViewById(R.id.button6);
-        remover= findViewById(R.id.button5);
+        carregar = findViewById(R.id.button6);
+        remover = findViewById(R.id.button5);
         context = this;
         Toast.makeText(this, "Encoste o Passe à traseira do telemóvel", Toast.LENGTH_SHORT).show();
 
@@ -87,17 +116,86 @@ public class Home extends AppCompatActivity {
 
 
         carregar.setOnClickListener(new View.OnClickListener() {
+
+            String[] sep;
+
+
             @Override
             public void onClick(View v) {
                 String link = "http://192.168.1.72/passes/carregar.php";
+                sep = text.split(",");
+                id = sep[0];
+
+                if (!id.equals("")) {
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, link, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            Toast.makeText(getApplicationContext(), "OK", Toast.LENGTH_SHORT).show();
+
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+                        }
+                    }) {
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String, String> data = new HashMap<>();
+                            data.put("id", id);
+
+                            return data;
+                        }
+                    };
+                    RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                    requestQueue.add(stringRequest);
+                }
+
+
                 new updateData().execute(link);
+
+                openPagamento();
             }
         });
 
         remover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String[] sep;
+
+                sep = text.split(",");
+                id = sep[0];
                 String link = "http://192.168.1.72/passes/remover.php";
+                if (!id.equals("")) {
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, link, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            Toast.makeText(getApplicationContext(), "OK", Toast.LENGTH_SHORT).show();
+
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+                        }
+                    }) {
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String, String> data = new HashMap<>();
+                            data.put("id", id);
+
+                            return data;
+                        }
+                    };
+                    RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                    requestQueue.add(stringRequest);
+
+                }
+
                 new updateData().execute(link);
                 Toast.makeText(getApplicationContext(), "Passe removido com sucesso",
                         Toast.LENGTH_LONG).show();
@@ -106,6 +204,9 @@ public class Home extends AppCompatActivity {
         });
 
     }
+
+
+
 
     private void readfromIntent(Intent intent) throws SQLException, ClassNotFoundException {
         String action = intent.getAction();
@@ -123,7 +224,11 @@ public class Home extends AppCompatActivity {
         }
     }
 
+    private void openPagamento() {
+        Intent intent = new Intent(this, Pagamento.class);
+        startActivity(intent);
 
+    }
     private void openGConta() {
         Intent intent = new Intent(this, PaginaGestaoConta.class);
         startActivity(intent);
@@ -138,7 +243,7 @@ public class Home extends AppCompatActivity {
     private void buildTagViews(NdefMessage[] msgs) throws ClassNotFoundException, SQLException {
         if (msgs == null || msgs.length == 0) return;
 
-        String text = "";
+        text = "";
         //String tagId = new String(msgs[0].getRecords()[0].getType());
 
         byte[] payload = msgs[0].getRecords()[0].getPayload();
@@ -150,10 +255,17 @@ public class Home extends AppCompatActivity {
         } catch (UnsupportedEncodingException e) {
             Log.e("Unsupported Encoding", e.toString());
         }
-        nfc_content.setText("Cartão lido com sucesso: ");
+
+
+
 
         code = findViewById(R.id.imageView);
-        String finalText = text;
+        finalText = text;
+
+        //ler();
+
+
+
 
 
         utilizar.setOnClickListener(new View.OnClickListener() {
@@ -226,6 +338,70 @@ public class updateData extends AsyncTask<String, String, String> {
 
     }
 
+
+  /* public void ler() {
+       class Connection extends AsyncTask<String,String,String>{
+
+
+
+           @Override
+           protected String doInBackground(String... strings) {
+               String result = "";
+               String host = "http://192.168.1.72/passes/ler.php";
+               try {
+                   HttpClient client = new DefaultHttpClient();
+                   HttpGet request = new HttpGet();
+                   request.setURI(URI.create(host));
+                   HttpResponse response = client.execute(request);
+                   BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+                   StringBuilder stringBuilder= new StringBuilder();
+                   String line = "";
+
+                   while((line = reader.readLine()) != null){
+                       stringBuilder.append(line);
+                       break;
+                   }
+                   reader.close();
+                   result= stringBuilder.toString();
+               }catch (Exception e){
+
+               }
+               return result;
+           }
+
+           protected void onPostExecute(String result){
+
+               try {
+                   JSONObject json= new JSONObject(result);
+                   int success = json.getInt("success");
+                   if(success==1)
+                   {
+
+                       JSONArray viagens = json.getJSONArray("historico");
+                       for(int i=0; i< viagens.length(); i++){
+                           JSONObject viagem = viagens.getJSONObject(i);
+                           String nome = viagem.getString("nome");
+                           String validade
+
+                           String line= estacao;
+                           adapter.add(line);
+                       }
+                   }
+                   else {
+                       t.setText("nao e");
+                   }
+               } catch (JSONException e) {
+                   t.setText("json");
+               }
+           }
+       }
+
+
+
+
+
+
+   }*/
     private void readMode() {
         nfcAdapter.disableForegroundDispatch(this);
     }
