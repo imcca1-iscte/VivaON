@@ -29,6 +29,7 @@
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/drawable/botao_gestaoconta.xml" value="0.1465" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/drawable/botao_home.xml" value="0.197" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_assinatura.xml" value="0.26358695652173914" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_cartao.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_gestaoconta.xml" value="0.26358695652173914" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_home.xml" value="0.1890625" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_list_maps.xml" value="0.18034447821681865" />
@@ -38,8 +39,11 @@
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_mainmapas.xml" value="0.2817028985507246" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_maps.xml" value="0.2817028985507246" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_mapsactivity.xml" value="0.2817028985507246" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_metodos_pagamento.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/activity_user.xml" value="0.2817028985507246" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/content_cartao.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/list_item.xml" value="0.2817028985507246" />
+        <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/menu_principal.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/register.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/row_data.xml" value="0.18034447821681865" />
         <entry key="..\:/Users/joao_/AndroidStudioProjects/VivaON/app/src/main/res/layout/success.xml" value="0.18541666666666667" />

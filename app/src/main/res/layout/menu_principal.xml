@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
+
+    <!-- Header aligned to top -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:background="#355723">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="Carteira"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#99B81A"
+            android:textSize="40sp" />
+    </RelativeLayout>
+
+    <!-- Footer aligned to bottom -->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="#355723"
+        android:gravity="center" >
+
+    </RelativeLayout>
+
+
+    <!-- Content below header and above footer -->
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/footer"
+        android:layout_below="@id/header"
+        android:gravity="top">
+
+
+        <!-- Titulo dos Cartoes-->
+
+        <RelativeLayout
+            android:id="@+id/content_tituloCartoes"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:gravity="top">
+
+            <TextView
+                android:id="@+id/textCartoes"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="bottom"
+                android:text="Cartões"
+                android:textSize="30dp"
+                android:translationX="10dp" />
+        </RelativeLayout>
+
+
+        <!-- Lista dos cartoes-->
+
+        <RelativeLayout
+            android:id="@+id/content_cartoesList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/content_tituloCartoes"
+            android:gravity="top">
+
+            <ListView
+                android:id="@+id/userlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="2dp">
+
+            </ListView>
+        </RelativeLayout>
+
+        <!-- Titulo do Saldo VivaMoney-->
+
+        <RelativeLayout
+            android:id="@+id/content_tituloVivaMoney"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/content_cartoesList"
+            android:gravity="top">
+
+
+            <TextView
+                android:id="@+id/textVivaMoney"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="bottom"
+                android:text="Viva Money"
+                android:textSize="30dp"
+                android:translationX="10dp" />
+
+        </RelativeLayout>
+
+
+        <!-- Lista do saldo -->
+
+        <RelativeLayout
+            android:id="@+id/content_vivaMoneyList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/content_tituloVivaMoney"
+            android:gravity="top">
+
+            <ListView
+                android:id="@+id/saldolist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="2dp">
+
+            </ListView>
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+    <!-- Texto antes da lista de cartoes-->
+
+</RelativeLayout>
