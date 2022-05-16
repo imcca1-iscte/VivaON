@@ -11,33 +11,6 @@
 
 
     <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:background="#355723"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:layout_width="114dp"
-            android:layout_height="45dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="145dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="151dp"
-            android:gravity="center"
-            android:text="Home"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#FFFFFFFF"
-            android:textSize="24sp"
-            android:translationY="15dp" />
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -46,10 +19,7 @@
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent">
 
         <!-- Botão Home -->
         <ImageButton
@@ -66,9 +36,14 @@
             android:layout_marginBottom="15dp"
             android:background="#00D64C4C"
             android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_home" />
+            app:srcCompat="@drawable/botao_home"
+            app:tint="#99B81A" />
 
         <!-- Botão Gestão de Conta -->
+
+        <!-- Botão Search -->
+
+        <!-- Botão Mapas -->
         <ImageButton
             android:id="@+id/buttonGestaoConta"
             android:layout_width="wrap_content"
@@ -77,16 +52,14 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="325dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginStart="257dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="93dp"
+            android:layout_marginBottom="14dp"
             android:background="#00D64C4C"
             android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_gestaoconta"
-            app:tint="#99B81A" />
+            app:srcCompat="@drawable/botao_gestaoconta" />
 
-        <!-- Botão Search -->
         <ImageButton
             android:id="@+id/buttonSearch"
             android:layout_width="38dp"
@@ -95,15 +68,14 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="242dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="131dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginStart="193dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginBottom="12dp"
             android:background="#00D64C4C"
             android:backgroundTint="#006C2D2D"
             app:srcCompat="@drawable/botao_search" />
 
-        <!-- Botão Mapas -->
         <ImageButton
             android:id="@+id/buttonMapas"
             android:layout_width="wrap_content"
@@ -112,15 +84,58 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="121dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="220dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginStart="99dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="242dp"
+            android:layout_marginBottom="12dp"
             android:background="#00D64C4C"
             android:backgroundTint="#006C2D2D"
             app:srcCompat="@drawable/botao_mapas" />
 
+        <ImageButton
+            android:id="@+id/buttonLogOff"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="346dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="11dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_logoff" />
+
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:background="#355723"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="114dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="149dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="147dp"
+            android:gravity="center"
+            android:text="Home"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:translationY="15dp" />
+
+    </RelativeLayout>
+
 
     <Button
         android:id="@+id/button3"
@@ -138,13 +153,12 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="264dp"
         android:text="Remover"
-        app:layout_constraintBottom_toBottomOf="@+id/footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintTop_toTopOf="@+id/header" />
 
     <Button
         android:id="@+id/button6"
@@ -162,12 +176,11 @@
         android:id="@+id/imageView"
         android:layout_width="226dp"
         android:layout_height="201dp"
-        app:layout_constraintBottom_toBottomOf="@+id/footer"
+        android:layout_marginTop="316dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.796"
         app:srcCompat="@drawable/white_background_2" />
 
     <ImageView
@@ -183,48 +196,18 @@
         app:srcCompat="@drawable/cartao_flat_2" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="162dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="122dp"
-        android:layout_marginBottom="425dp"
-        android:text="ryuir"
-        android:textColor="#FF08"
+        android:id="@+id/textView9"
+        android:layout_width="167dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="341dp"
+        android:text="Validade:"
+        android:textSize="17dp"
         app:layout_constraintBottom_toTopOf="@+id/footer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.726"
+        app:layout_constraintHorizontal_bias="0.729"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="162dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginBottom="475dp"
-        android:text="dtyurf"
-        android:textColor="#FF08"
-        app:layout_constraintBottom_toTopOf="@+id/footer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.726"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="162dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="165dp"
-        android:layout_marginBottom="382dp"
-        android:text="rytur"
-        android:textColor="#FF08"
-        app:layout_constraintBottom_toTopOf="@+id/footer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.775"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ public class PaginaAssinatura extends AppCompatActivity {
     private ImageButton buttonBack;
     private ImageButton buttonGConta;
     private Button pacotefamiliar1,pacotefamiliar2,ilimitado,estudante,cultura;
+    private String email;
 
 
 
@@ -21,7 +22,7 @@ public class PaginaAssinatura extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assinatura);
-        buttonBack= (ImageButton)findViewById(R.id.buttonBack);
+
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,18 +77,14 @@ public class PaginaAssinatura extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
-
     }
 
     private void openPay() {
+        email =getIntent().getExtras().getString("Value");
         Intent intent=new Intent(this,MetodosPagamento.class);
+        intent.putExtra("Value", email);
+        String tipo="Assinatura";
+        intent.putExtra("Tipo", tipo);
         startActivity(intent);
     }
 

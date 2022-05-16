@@ -1,9 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="ExtraText">
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="#355723"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!-- Botão Home -->
+        <ImageButton
+            android:id="@+id/buttonHome"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="323dp"
+            android:layout_marginBottom="15dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_home" />
+
+        <!-- Botão Gestão de Conta -->
+        <ImageButton
+            android:id="@+id/buttonGestaoConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="325dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="15dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_gestaoconta"
+            app:tint="#99B81A" />
+
+        <!-- Botão Search -->
+        <ImageButton
+            android:id="@+id/buttonSearch"
+            android:layout_width="38dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="242dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="131dp"
+            android:layout_marginBottom="15dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_search" />
+
+        <!-- Botão Mapas -->
+        <ImageButton
+            android:id="@+id/buttonMapas"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="121dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="220dp"
+            android:layout_marginBottom="15dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_mapas" />
+
+    </RelativeLayout>
 
     <com.braintreepayments.cardform.view.CardForm
         android:id="@+id/card_form"
@@ -16,12 +101,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="126dp"
 
-        android:text="Buy Now"
-        android:textColor="@android:color/white"/>
+        android:text="Pagar"
+        android:textColor="@android:color/white" />
 
 </RelativeLayout>

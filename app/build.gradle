@@ -51,6 +51,7 @@ dependencies {
     implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
     implementation 'com.braintreepayments:card-form:5.3.0'
     implementation 'mysql:mysql-connector-java:8.0.29'
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.16.0'
 
 }
 

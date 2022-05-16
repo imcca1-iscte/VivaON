@@ -11,7 +11,7 @@
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="59dp"
         android:layout_alignParentTop="true"
         android:background="#355723">
 
@@ -35,266 +35,288 @@
             android:translationY="15dp" />
 
         <!-- Botão para trás -->
-        <ImageButton
-            android:id="@+id/buttonBack"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="14dp"
-            android:background="#00D64C4C"
-            android:backgroundTint="#006C2D2D"
-            android:contentDescription="@string/bottom_sheet_behavior"
-            app:srcCompat="@drawable/botao_back"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-            tools:visibility="visible" />
 
         <!-- Botão LogOff -->
-        <ImageButton
-            android:id="@+id/buttonLogOff"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="14dp"
-            android:background="#00D64C4C"
-            android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_logoff" />
 
     </RelativeLayout>
 
     <!-- FOOTER -->
-    <RelativeLayout
-        android:id="@+id/footer"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:background="#355723"
-        android:gravity="center">
-
-        <!-- Botão Home -->
-        <ImageButton
-            android:id="@+id/buttonHome"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="323dp"
-            android:layout_marginBottom="15dp"
-            android:background="#00D64C4C"
-            android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_home" />
-
-        <!-- Botão Gestão de Conta -->
-        <ImageButton
-            android:id="@+id/buttonGestaoConta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="325dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="15dp"
-            android:background="#00D64C4C"
-            android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_gestaoconta"
-            app:tint="#FFFFFFFF" />
-
-        <!-- Botão Search -->
-        <ImageButton
-            android:id="@+id/buttonSearch"
-            android:layout_width="38dp"
-            android:layout_height="25dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="242dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="131dp"
-            android:layout_marginBottom="15dp"
-            android:background="#00D64C4C"
-            android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_search" />
-
-        <!-- Botão Mapas -->
-        <ImageButton
-            android:id="@+id/buttonMapas"
-            android:layout_width="wrap_content"
-            android:layout_height="43dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="121dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="220dp"
-            android:layout_marginBottom="15dp"
-            android:background="#00D64C4C"
-            android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_mapas" />
-
-    </RelativeLayout>
 
     <!-- Content below header and above footer -->
     <RelativeLayout
         android:id="@+id/content"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@id/footer"
+
         android:layout_below="@id/header"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
         android:gravity="center">
 
         <!-- BOTÃO pacote familiar 1 -->
+
+        <!-- BOTÃO pacote familiar 2 -->
+
+        <!-- BOTÃO pacote ilimitado -->
+
+        <!-- BOTÃO pacote estudante -->
+
+        <RelativeLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-10dp"
+            android:background="#355723"
+            android:gravity="center">
+
+            <!-- Botão Home -->
+            <ImageButton
+                android:id="@+id/buttonHome"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="323dp"
+                android:layout_marginBottom="15dp"
+                android:background="#00D64C4C"
+                android:backgroundTint="#006C2D2D"
+                app:srcCompat="@drawable/botao_home" />
+
+            <!-- Botão Gestão de Conta -->
+
+            <!-- Botão Search -->
+
+            <!-- Botão Mapas -->
+            <ImageButton
+                android:id="@+id/buttonGestaoConta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="257dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="93dp"
+                android:layout_marginBottom="14dp"
+                android:background="#00D64C4C"
+                android:backgroundTint="#006C2D2D"
+                app:srcCompat="@drawable/botao_gestaoconta"
+                app:tint="#99B81A" />
+
+            <ImageButton
+                android:id="@+id/buttonSearch"
+                android:layout_width="38dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="193dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="180dp"
+                android:layout_marginBottom="12dp"
+                android:background="#00D64C4C"
+                android:backgroundTint="#006C2D2D"
+                app:srcCompat="@drawable/botao_search" />
+
+            <ImageButton
+                android:id="@+id/buttonMapas"
+                android:layout_width="wrap_content"
+                android:layout_height="43dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="99dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="242dp"
+                android:layout_marginBottom="12dp"
+                android:background="#00D64C4C"
+                android:backgroundTint="#006C2D2D"
+                app:srcCompat="@drawable/botao_mapas" />
+
+            <ImageButton
+                android:id="@+id/buttonLogOff"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="346dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="11dp"
+                android:background="#00D64C4C"
+                android:backgroundTint="#006C2D2D"
+                app:srcCompat="@drawable/botao_logoff" />
+
+        </RelativeLayout>
+
+        <!-- BOTÃO pacote cultura -->
+
         <Button
             android:id="@+id/pacotefamiliar1"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="83dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="230dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="232dp"
             android:layout_marginBottom="440dp"
             android:text="Pacote Familiar 1 3,99€/mês"
             android:textSize="15sp" />
 
-        <!-- BOTÃO pacote familiar 2 -->
         <Button
             android:id="@+id/pacotefamiliar2"
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="235dp"
-            android:layout_marginBottom="335dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="115dp"
+            android:layout_marginEnd="238dp"
+            android:layout_marginBottom="349dp"
             android:text="Pacote Familiar 2 4,99€/mês"
             android:textSize="15sp" />
 
-        <!-- BOTÃO pacote ilimitado -->
+        <!-- TEXTO pacote familiar 1 -->
+
+        <!-- TEXTO pacote familiar 2 -->
+
+        <!-- TEXTO pacote ilimitado -->
+
+        <!-- TEXTO pacote estudante -->
+
+        <!-- TEXTO pacote cultura -->
+
         <Button
             android:id="@+id/pacoteilimitado"
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="230dp"
-            android:layout_marginBottom="225dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="204dp"
+            android:layout_marginEnd="233dp"
+            android:layout_marginBottom="260dp"
             android:text="Pacote Ilimitado  2,99€/mês"
             android:textSize="15sp" />
 
-        <!-- BOTÃO pacote estudante -->
         <Button
             android:id="@+id/pacoteestudante"
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="230dp"
-            android:layout_marginBottom="115dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="294dp"
+            android:layout_marginEnd="235dp"
+            android:layout_marginBottom="170dp"
             android:text="Pacote Estudante   1,99€/mês"
             android:textSize="15sp" />
 
-        <!-- BOTÃO pacote cultura -->
         <Button
             android:id="@+id/pacotecultura"
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="228dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="386dp"
+            android:layout_marginEnd="233dp"
+            android:layout_marginBottom="78dp"
             android:text="Pacote Cultura  4,99€/mês"
             android:textSize="15sp" />
 
-        <!-- TEXTO pacote familiar 1 -->
         <TextView
             android:id="@+id/textpacotefamiliar1"
-            android:layout_width="187dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="63dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="190dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="446dp"
+            android:layout_marginStart="209dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="452dp"
             android:text="Vantagens: pacote inclui conta conjunta com 1 responsável e 2 crianças e/ou idosos" />
 
-        <!-- TEXTO pacote familiar 2 -->
         <TextView
             android:id="@+id/textpacotefamiliar2"
             android:layout_width="wrap_content"
             android:layout_height="83dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="190dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="327dp"
+            android:layout_marginStart="206dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="349dp"
             android:text="Vantagens: pacote inclui conta conjunta com 1 responsável e mais de 2 crianças e/ou idosos" />
 
-        <!-- TEXTO pacote ilimitado -->
         <TextView
             android:id="@+id/textpacoteilimitado"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="190dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="230dp"
+            android:layout_marginStart="205dp"
+            android:layout_marginTop="209dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="266dp"
             android:text="Vantagens: pacote inclui comissões em compras na aplicações grátis e exclui anúncios" />
 
-        <!-- TEXTO pacote estudante -->
         <TextView
             android:id="@+id/textpacoteestudante"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="190dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="111dp"
+            android:layout_marginStart="206dp"
+            android:layout_marginTop="299dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="159dp"
             android:text="Vantagens: pacote inclui comissões em compras na aplicações grátis e 1 bilhete de ida e volta grátis por semana*" />
 
-        <!-- TEXTO pacote cultura -->
         <TextView
             android:id="@+id/textpacotecultura"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="190dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="13dp"
+            android:layout_marginStart="205dp"
+            android:layout_marginTop="392dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="83dp"
             android:text="Vantagens: pacote inclui bilhete de ida e volta grátis no 1º fim de semana do mês e feriados" />
     </RelativeLayout>
 
 </RelativeLayout>
-

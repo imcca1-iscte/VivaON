@@ -58,7 +58,7 @@ public class Read extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             String result = "";
-            String host = "http://192.168.1.72/passes/ler.php";
+            String host = "http://192.168.1.71/passes/ler.php";
             try {
                 HttpClient client = new DefaultHttpClient();
                 HttpGet request = new HttpGet();
@@ -91,11 +91,11 @@ public class Read extends AppCompatActivity {
                     JSONArray viagens = json.getJSONArray("historico");
                     for(int i=0; i< viagens.length(); i++){
                         JSONObject viagem = viagens.getJSONObject(i);
-                        String estacao_partida = viagem.getString("estacao_partida");
-                        String estacao_chegada = viagem.getString("estacao_chegada");
-                        String hora_partida = viagem.getString("hora_partida");
-                        String hora_chegada= viagem.getString("hora_chegada");
-                        String line= estacao_partida+ "," + hora_partida +"," +estacao_chegada+ "," + hora_chegada;
+                        String estacao = viagem.getString("estacao");
+                       // String estacao_chegada = viagem.getString("estacao_chegada");
+                        //String hora_partida = viagem.getString("hora_partida");
+                        String hora= viagem.getString("hora");
+                        String line= estacao+ "," +hora;
                         adapter.add(line);
                     }
                 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,27 +11,176 @@
 
 
     tools:context=".MapsActivity">
-    <EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/et_source"
-    android:hint="A sua origem"
-    android:padding="12dp"
-    android:background="@android:drawable/editbox_background"/>
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="413dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:background="#355723"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-17dp"
+        tools:layout_editor_absoluteY="-15dp">
+
+        <TextView
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="98dp"
+            android:gravity="center"
+            android:text="Informação de Horário"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24sp"
+            android:translationY="15dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="380dp"
+        android:layout_height="67dp"
+        android:layout_alignParentBottom="true"
+        android:background="#355723"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!-- Botão Home -->
+        <ImageButton
+            android:id="@+id/buttonHome"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="323dp"
+            android:layout_marginBottom="15dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_home" />
+
+        <!-- Botão Gestão de Conta -->
+
+        <!-- Botão Search -->
+
+        <!-- Botão Mapas -->
+        <ImageButton
+            android:id="@+id/buttonGestaoConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="257dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="93dp"
+            android:layout_marginBottom="14dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_gestaoconta"
+             />
+
+        <ImageButton
+            android:id="@+id/buttonSearch"
+            android:layout_width="35dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="178dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="166dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_search"
+            app:tint="#99B81A"/>
+
+        <ImageButton
+            android:id="@+id/buttonMapas"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="99dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="242dp"
+            android:layout_marginBottom="12dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_mapas" />
+
+        <ImageButton
+            android:id="@+id/buttonLogOff"
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="314dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_logoff" />
+
+    </RelativeLayout>
 
     <EditText
+        android:id="@+id/et_source"
+        android:layout_width="356dp"
+        android:layout_height="49dp"
+        android:background="@android:drawable/editbox_background"
+        android:hint="A Estação/Paragem de origem"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.196" />
+
+    <EditText
+        android:id="@+id/et_destination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_destination"
-        android:hint="O seu destino"
+        android:background="@android:drawable/editbox_background"
+        android:hint="A Estação/Paragem de destino"
         android:padding="12dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:drawable/editbox_background"/>
-      <Button
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/bt_track"
-          android:text="Mostrar opções disponíveis"
-          android:layout_marginTop="16dp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.322" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/bt_track"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar próximo horário"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.477" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

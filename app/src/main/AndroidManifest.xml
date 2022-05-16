@@ -16,6 +16,50 @@
         android:theme="@style/Theme.VivaON"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Write"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Passes"
+            android:exported="false" />
+        <activity
+            android:name=".Progress"
+            android:exported="false" />
+        <activity
+            android:name=".MetodosPagamento"
+            android:exported="false" />
+        <activity
+            android:name=".Sucess"
+            android:exported="false" />
+        <activity
+            android:name=".InfoCP"
+            android:exported="false" />
+        <activity
+            android:name=".InfoVimeca"
+            android:exported="false" />
+        <activity
+            android:name=".InfoTrans"
+            android:exported="false" />
+        <activity
+            android:name=".InfoTST"
+            android:exported="false" />
+        <activity
+            android:name=".InfoMTS"
+            android:exported="false" />
+        <activity
+            android:name=".InfoMetro"
+            android:exported="false" />
+        <activity
+            android:name=".InfoCarris"
+            android:exported="false" />
+        <activity
             android:name=".Horario"
             android:exported="false" />
 
@@ -24,26 +68,34 @@
             android:required="false" />
 
         <activity
-            android:name=".Read"
-            android:exported="true" />
-        <activity
             android:name=".InfoFertagus"
             android:exported="false" />
         <activity
             android:name=".CartaoCredito"
             android:exported="false" />
         <activity
-            android:name=".Pagamento"
+            android:name=".Info"
             android:exported="false" />
         <activity
-            android:name=".Info"
+            android:name=".Read"
             android:exported="false" />
         <activity
             android:name=".MapsActivity"
             android:exported="false" />
         <activity
+            android:name=".Pagamento"
+            android:exported="false" />
+        <activity
             android:name=".Home"
-            android:exported="true"></activity>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".PaginaAssinatura"
             android:exported="false" />

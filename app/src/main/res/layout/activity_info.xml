@@ -15,10 +15,7 @@
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent">
 
         <!-- Botão Home -->
         <ImageButton
@@ -35,9 +32,14 @@
             android:layout_marginBottom="15dp"
             android:background="#00D64C4C"
             android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_home" />
+            app:srcCompat="@drawable/botao_home"
+             />
 
         <!-- Botão Gestão de Conta -->
+
+        <!-- Botão Search -->
+
+        <!-- Botão Mapas -->
         <ImageButton
             android:id="@+id/buttonGestaoConta"
             android:layout_width="wrap_content"
@@ -46,16 +48,14 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="325dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginStart="257dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="93dp"
+            android:layout_marginBottom="14dp"
             android:background="#00D64C4C"
             android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_gestaoconta"
-            app:tint="#99B81A" />
+            app:srcCompat="@drawable/botao_gestaoconta" />
 
-        <!-- Botão Search -->
         <ImageButton
             android:id="@+id/buttonSearch"
             android:layout_width="38dp"
@@ -64,15 +64,14 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="242dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="131dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginStart="193dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginBottom="12dp"
             android:background="#00D64C4C"
             android:backgroundTint="#006C2D2D"
             app:srcCompat="@drawable/botao_search" />
 
-        <!-- Botão Mapas -->
         <ImageButton
             android:id="@+id/buttonMapas"
             android:layout_width="wrap_content"
@@ -81,13 +80,30 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="121dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="220dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginStart="99dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="242dp"
+            android:layout_marginBottom="12dp"
             android:background="#00D64C4C"
             android:backgroundTint="#006C2D2D"
-            app:srcCompat="@drawable/botao_mapas" />
+            app:srcCompat="@drawable/botao_mapas"
+            app:tint="#99B81A"/>
+
+        <ImageButton
+            android:id="@+id/buttonLogOff"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="346dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="11dp"
+            android:background="#00D64C4C"
+            android:backgroundTint="#006C2D2D"
+            app:srcCompat="@drawable/botao_logoff" />
 
     </RelativeLayout>
 
@@ -105,9 +121,11 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="135dp"
             android:layout_marginTop="23dp"
             android:layout_marginEnd="120dp"
+            android:layout_marginBottom="11dp"
             android:gravity="center"
             android:text="Informações"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -118,29 +136,103 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="127dp"
-        android:layout_marginBottom="556dp"
+        android:layout_width="125dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="112dp"
         android:text="Mapa Fertagus"
-        app:layout_constraintBottom_toBottomOf="@+id/footer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/header" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/buttoncarris"
+        android:layout_width="109dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="33dp"
+        android:text="Mapa Carris"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <Button
+        android:id="@+id/buttoncp"
+        android:layout_width="109dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="236dp"
+        android:layout_marginEnd="161dp"
+        android:text="Mapa CP"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <Button
+        android:id="@+id/buttonmetro"
+        android:layout_width="107dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="163dp"
+        android:text="Mapa Metro Lisboa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <Button
+        android:id="@+id/buttonmts"
+        android:layout_width="109dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="328dp"
+        android:text="Mapa Metro Sul Tejo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <Button
+        android:id="@+id/buttontst"
+        android:layout_width="109dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="118dp"
+        android:text="Mapa TST"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <Button
+        android:id="@+id/buttontrans"
+        android:layout_width="113dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp"
+
+        android:text="Mapa Transtejo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button4" />
+
+    <Button
+        android:id="@+id/buttonvim"
+        android:layout_width="102dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="224dp"
+        android:text="Mapa Vimeca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="127dp"
-        android:layout_marginBottom="556dp"
-        android:text="Horários Fertagus"
-        app:layout_constraintBottom_toBottomOf="@+id/footer"
+        android:layout_marginTop="297dp"
+        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/header" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

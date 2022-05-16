@@ -1,6 +1,7 @@
 package com.vivaon;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -22,6 +23,8 @@ import com.braintreepayments.cardform.view.CardForm;
 import com.braintreepayments.cardform.view.CvvEditText;
 import com.braintreepayments.cardform.view.ExpirationDateEditText;
 import com.braintreepayments.cardform.view.MobileNumberEditText;
+import com.vivaon.R;
+import com.vivaon.Sucess;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,19 +35,24 @@ public class CartaoCredito extends AppCompatActivity {
     CardForm cardForm;
     Button buy;
     AlertDialog.Builder alertBuilder;
-    String URL ="http://10.0.2.2/cards/regcards.php";
-
+    String URL ="http://192.168.1.71/passes/regcards.php";
     CardEditText CardN;
     ExpirationDateEditText ExDate;
     CvvEditText ExCVV;
     MobileNumberEditText ExMob;
     String cardnumber,expirationdate,CVV,phonenumber;
+    String email;
+    String compra;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cartao_credito);
+
+        email=getIntent().getExtras().getString("Value");
+        compra=getIntent().getExtras().getString("Tipo");
 
 
         cardForm = findViewById(R.id.card_form);
@@ -69,7 +77,7 @@ public class CartaoCredito extends AppCompatActivity {
             public void onClick(View view) {
                 if (cardForm.isValid()) {
                     alertBuilder = new AlertDialog.Builder(CartaoCredito.this);
-                    alertBuilder.setTitle("Confirm before purchase");
+                    alertBuilder.setTitle("Confirme os dados");
                     alertBuilder.setMessage("Card number: " + cardForm.getCardNumber() + "\n" +
                             "Card expiry date: " + cardForm.getExpirationDateEditText().getText().toString() + "\n" +
                             "Card CVV: " + cardForm.getCvv() + "\n" +
@@ -89,8 +97,8 @@ public class CartaoCredito extends AppCompatActivity {
                                     @Override
                                     public void onResponse(String response) {
                                         if (response.equals("sucess")) {
-                                            Toast.makeText(CartaoCredito.this, "Thank you for purchase", Toast.LENGTH_LONG).show();
-                                            buy.setClickable(false);
+                                            progress();
+                                            buy.setClickable(true);
                                         } else if (response.equals("failure"))  {
                                             Toast.makeText(CartaoCredito.this, "Error", Toast.LENGTH_LONG).show();
                                         }
@@ -108,6 +116,7 @@ public class CartaoCredito extends AppCompatActivity {
                                         data.put("expirationdate",expirationdate);
                                         data.put("CVV",CVV);
                                         data.put("phonenumber",phonenumber);
+                                        data.put("tipocompra",compra);
                                         return data;
                                     }
                                 };
@@ -118,14 +127,11 @@ public class CartaoCredito extends AppCompatActivity {
 
                             }
 
-
-
-
                         }
 
 
                     });
-                    alertBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    alertBuilder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.dismiss();
@@ -134,14 +140,19 @@ public class CartaoCredito extends AppCompatActivity {
                     AlertDialog alertDialog = alertBuilder.create();
                     alertDialog.show();
 
-
-
-
                 } else {
-                    Toast.makeText(CartaoCredito.this, "Please complete the form", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CartaoCredito.this, "Preencha todos os campos", Toast.LENGTH_LONG).show();
                 }
             }
         });
+    }
+
+    private void progress() {
+        Intent intent= new Intent(this, Progress.class);
+        intent.putExtra("Value",email);
+        startActivity(intent);
+
+
     }
 
 

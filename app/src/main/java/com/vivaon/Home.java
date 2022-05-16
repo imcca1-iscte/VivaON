@@ -3,6 +3,7 @@ package com.vivaon;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -46,14 +47,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -71,9 +76,10 @@ public class Home extends AppCompatActivity {
     PendingIntent pendingIntent;
     Tag myTag;
     Context context;
-    TextView nfc_content1;
+
     TextView nfc_content2;
     TextView nfc_content3;
+
     Button utilizar;
     Button carregar;
     Button remover;
@@ -81,20 +87,25 @@ public class Home extends AppCompatActivity {
     ImageButton buttonSearch;
     ImageButton buttonGConta;
     ImageButton buttonMaps;
+    ImageButton logOff;
     String text;
     String finalText;
     String id;
+    String validade;
+    //Connection c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        nfc_content1 = (TextView) findViewById(R.id.textView1);
-        nfc_content2 = (TextView) findViewById(R.id.textView4);
-        nfc_content3 = (TextView) findViewById(R.id.textView5);
+        nfc_content2 = (TextView) findViewById(R.id.textView9);
+
         utilizar = findViewById(R.id.button3);
         carregar = findViewById(R.id.button6);
         remover = findViewById(R.id.button5);
+        //c= new Connection(this);
+
+
         context = this;
         Toast.makeText(this, "Encoste o Passe à traseira do telemóvel", Toast.LENGTH_SHORT).show();
 
@@ -122,9 +133,10 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                String link = "http://192.168.1.72/passes/carregar.php";
+                String link = "http://169.254.56.237/passes/carregar.php";
                 sep = text.split(",");
                 id = sep[0];
+
 
                 if (!id.equals("")) {
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, link, new Response.Listener<String>() {
@@ -156,7 +168,7 @@ public class Home extends AppCompatActivity {
 
                 new updateData().execute(link);
 
-                openPagamento();
+                openMetodosPagamento();
             }
         });
 
@@ -167,7 +179,7 @@ public class Home extends AppCompatActivity {
 
                 sep = text.split(",");
                 id = sep[0];
-                String link = "http://192.168.1.72/passes/remover.php";
+                String link = "http://169.254.56.237/passes/remover.php";
                 if (!id.equals("")) {
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, link, new Response.Listener<String>() {
                         @Override
@@ -196,7 +208,7 @@ public class Home extends AppCompatActivity {
 
                 }
 
-                new updateData().execute(link);
+               // new updateData().execute(link);
                 Toast.makeText(getApplicationContext(), "Passe removido com sucesso",
                         Toast.LENGTH_LONG).show();
 
@@ -224,9 +236,10 @@ public class Home extends AppCompatActivity {
         }
     }
 
-    private void openPagamento() {
-        Intent intent = new Intent(this, Pagamento.class);
+    private void openMetodosPagamento() {
+        Intent intent = new Intent(this, MetodosPagamento.class);
         startActivity(intent);
+
 
     }
     private void openGConta() {
@@ -259,11 +272,19 @@ public class Home extends AppCompatActivity {
 
 
 
+
+
         code = findViewById(R.id.imageView);
         finalText = text;
 
-        //ler();
+        //c.execute(id);
 
+        String[] sep;
+
+        sep = text.split(",");
+        validade = sep[1];
+
+        nfc_content2.setText("Validade: " +validade);
 
 
 
@@ -339,69 +360,86 @@ public class updateData extends AsyncTask<String, String, String> {
     }
 
 
-  /* public void ler() {
-       class Connection extends AsyncTask<String,String,String>{
 
+      /* class Connection extends AsyncTask<String,Void,String>{
 
-
+           String [] sep = text.split(",");
+           String validade  = sep[1];
+            Context ctx;
+           Connection(Context ctx)
+           {
+               this.ctx =ctx;
+           }
            @Override
-           protected String doInBackground(String... strings) {
-               String result = "";
-               String host = "http://192.168.1.72/passes/ler.php";
+           protected void onPreExecute() {
+
+           }
+           @Override
+           protected String doInBackground(String... params) {
+
+               String Hurl = "http://192.168.1.90/passes/ler3Nome.php";
+
+
+               String nome = params[0];
+
                try {
-                   HttpClient client = new DefaultHttpClient();
-                   HttpGet request = new HttpGet();
-                   request.setURI(URI.create(host));
-                   HttpResponse response = client.execute(request);
-                   BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-                   StringBuilder stringBuilder= new StringBuilder();
+                   URL url = new URL(Hurl);
+                   HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                   httpURLConnection.setRequestMethod("POST");
+                   httpURLConnection.setDoOutput(true);
+                   httpURLConnection.setDoInput(true);
+                   OutputStream outputStream = httpURLConnection.getOutputStream();
+                   BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                   String data = URLEncoder.encode("id", "UTF-8") + "=" + URLEncoder.encode(nome, "UTF-8");
+                   bufferedWriter.write(data);
+                   bufferedWriter.flush();
+                   bufferedWriter.close();
+                   outputStream.close();
+                   InputStream inputStream = httpURLConnection.getInputStream();
+                   BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                   String response = "";
                    String line = "";
-
-                   while((line = reader.readLine()) != null){
-                       stringBuilder.append(line);
-                       break;
+                   while ((line = bufferedReader.readLine()) != null) {
+                       response += line;
                    }
-                   reader.close();
-                   result= stringBuilder.toString();
-               }catch (Exception e){
-
+                   bufferedReader.close();
+                   inputStream.close();
+                   httpURLConnection.disconnect();
+                   return response;
+               } catch (MalformedURLException e) {
+                   e.printStackTrace();
+               } catch (IOException e) {
+                   e.printStackTrace();
                }
-               return result;
+
+               return null;
            }
-
-           protected void onPostExecute(String result){
-
-               try {
-                   JSONObject json= new JSONObject(result);
-                   int success = json.getInt("success");
-                   if(success==1)
-                   {
-
-                       JSONArray viagens = json.getJSONArray("historico");
-                       for(int i=0; i< viagens.length(); i++){
-                           JSONObject viagem = viagens.getJSONObject(i);
-                           String nome = viagem.getString("nome");
-                           String validade
-
-                           String line= estacao;
-                           adapter.add(line);
-                       }
-                   }
-                   else {
-                       t.setText("nao e");
-                   }
-               } catch (JSONException e) {
-                   t.setText("json");
+           @Override
+           protected void onProgressUpdate(Void... values) {
+               super.onProgressUpdate(values);
+           }
+           @Override
+           protected void onPostExecute(String result) {
+               if(result.equals("Registration Success..."))
+               {
+                   Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
+               }
+               else
+               {
+                  nfc_content3.setText(result);
+                  nfc_content2.setText(validade);
                }
            }
-       }
+
+
+       }*/
 
 
 
 
 
 
-   }*/
+
     private void readMode() {
         nfcAdapter.disableForegroundDispatch(this);
     }

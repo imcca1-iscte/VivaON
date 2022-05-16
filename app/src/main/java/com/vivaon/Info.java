@@ -22,25 +22,35 @@ import java.util.Map;
 
 public class Info extends AppCompatActivity {
 
-    Button fertagusH;
+
     Button fertagusM;
+    Button carrisM;
+    Button cpM;
+    Button metroM;
+    Button mtsM;
+    Button transM;
+    Button tstM;
+    Button vimecaM;
+    Button t;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
-        fertagusH= findViewById(R.id.button7);
+
         fertagusM= findViewById(R.id.button4);
+        carrisM=findViewById(R.id.button8);
+        t=findViewById(R.id.button2);
 
-        fertagusH.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.fertagus.pt/pt/horarios/fertagus");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
-        });
 
-        fertagusM.setOnClickListener(new View.OnClickListener() {
+       t.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               openWrite();
+           }
+       });
+        /*fertagusM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -49,8 +59,93 @@ public class Info extends AppCompatActivity {
 
             }
         });
+        vimecaM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openVimeca();
+            }
+        });
+        mtsM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMts();
+            }
+        });
 
+        metroM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMetro();
+            }
+        });
 
+        tstM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTst();
+            }
+        });
+
+        transM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTrans();
+            }
+        });
+        cpM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCP();
+            }
+        });
+
+        carrisM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCarris();
+            }
+        });
+*/
+    }
+
+    private void openWrite() {
+        Intent intent = new Intent(this, Write.class);
+        startActivity(intent);
+    }
+
+    private void openCarris() {
+        Intent intent = new Intent(this, InfoCarris.class);
+        startActivity(intent);
+    }
+
+    private void openCP() {
+        Intent intent = new Intent(this, InfoCP.class);
+        startActivity(intent);
+    }
+
+    private void openTrans() {
+        Intent intent = new Intent(this, InfoTrans.class);
+        startActivity(intent);
+    }
+
+    private void openTst() {
+        Intent intent = new Intent(this, InfoTST.class);
+        startActivity(intent);
+    }
+
+    private void openMetro() {
+        Intent intent = new Intent(this, InfoMetro.class);
+        startActivity(intent);
+    }
+
+    private void openMts() {
+        Intent intent = new Intent(this, InfoMTS.class);
+        startActivity(intent);
+    }
+
+    private void openVimeca() {
+        Intent intent = new Intent(this, InfoVimeca.class);
+        startActivity(intent);
     }
 
     private void openFertagus() {

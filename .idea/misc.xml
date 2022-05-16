@@ -8,21 +8,34 @@
         <entry key="..\:/Users/guira/OneDrive/Documentos/ISCTE/VivaON/app/src/main/res/layout/activity_user.xml" value="0.2" />
         <entry key="..\:/Users/guira/OneDrive/Documentos/ISCTE/VivaON/app/src/main/res/layout/list_item.xml" value="0.2" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_assinatura.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_cartao.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_cartao_credito.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_gestaoconta.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_gestaoconta.xml" value="0.264" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_historico_viagens.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_carris.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_cp.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_fertagus.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_metro.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_metro.xml" value="0.264" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_mts.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_tst.xml" value="0.264" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_mapsactivity.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_trans.xml" value="0.264" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_tst.xml" value="0.2" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_info_vimeca.xml" value="0.264" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_mapsactivity.xml" value="0.264" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_metodos_pagamento.xml" value="0.264" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_pagamento.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_passes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_progress.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_read.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_sucess.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_viagem_detalhada.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/horarios.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/activity_write.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/content_cartao.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/horarios.xml" value="0.264" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/menu_principal.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/register.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/settings_activity.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/layout/ver.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/imcco/AndroidStudioProjects/VersaoJoao/app/src/main/res/xml/root_preferences.xml" value="0.36666666666666664" />

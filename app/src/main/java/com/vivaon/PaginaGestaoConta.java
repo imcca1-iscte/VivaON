@@ -1,6 +1,7 @@
 package com.vivaon;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,8 +29,12 @@ public class PaginaGestaoConta extends AppCompatActivity {
 
     private Button buttonAssinatura;
     private Button historico;
+    private Button site;
+
     private ImageButton buttonHome;
     private ImageButton buttonInfo;
+    private ImageButton buttonMapas;
+    private ImageButton logOff;
     private TextView textview3;
     private EditText editText;
     private String email;
@@ -46,9 +51,18 @@ public class PaginaGestaoConta extends AppCompatActivity {
         textview3.setText(email);
         buttonInfo= findViewById(R.id.buttonSearch);
         historico= findViewById(R.id.button8);
+        logOff= findViewById(R.id.buttonLogOff);
+        site= findViewById(R.id.button3);
+        buttonMapas=findViewById(R.id.buttonMapas);
 
 
 
+buttonMapas.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        openMapas();
+    }
+});
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,13 +76,6 @@ public class PaginaGestaoConta extends AppCompatActivity {
 
 
                 read();
-
-
-
-
-
-
-
 
             }
         });
@@ -89,9 +96,42 @@ public class PaginaGestaoConta extends AppCompatActivity {
         });
 
 
+logOff.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        openLogIn();
+    }
+});
 
+
+
+
+site.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        openSite();
+    }
+});
 
     }
+
+    private void openSite() {
+        Uri uri = Uri.parse("https://vivaon.wixsite.com/iscte-iul");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
+    private void openLogIn() {
+        Intent intent=new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void openMapas() {
+        Intent intent=new Intent(this, Info.class);
+        startActivity(intent);
+    }
+
+
 
     private void read() {
         Intent intent=new Intent(this, Read.class);
@@ -101,11 +141,13 @@ public class PaginaGestaoConta extends AppCompatActivity {
 
     public void openAssinatura(){
         Intent intent=new Intent(this, PaginaAssinatura.class);
+        intent.putExtra("Value",email);
         startActivity(intent);
     }
 
     public void openHome(){
         Intent intent=new Intent(this, Home.class);
+        intent.putExtra("Value",email);
         startActivity(intent);
     }
 
@@ -113,5 +155,6 @@ public class PaginaGestaoConta extends AppCompatActivity {
         Intent intent=new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
+
 
 }
